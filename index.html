@@ -3,178 +3,429 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RÜZE - Karanlık Çağrı</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>RÜZE - Efsane Başlıyor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* --- DARK FANTASY TEMASI --- */
-        :root {
-            --bg-main: #0a0a0a; /* Zifiri karanlık */
-            --bg-secondary: #141414; /* Koyu gri */
-            --text-primary: #c0c0c0; /* Gümüş rengi yazı */
-            --accent-blood: #8a0303; /* Kan kırmızısı vurgu */
-            --accent-gold: #d4af37; /* Antik altın rengi */
-            --font-heading: 'Cinzel Decorative', cursive;
-            --font-body: 'Lora', serif;
-        }
-
+        /* Genel Stil Ayarları */
         body {
-            font-family: var(--font-body);
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            background-color: var(--bg-main);
-            color: var(--text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
-            background-image: url('https://www.transparenttextures.com/patterns/black-felt.png'); /* Hafif doku */
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden; /* Yatay kaydırmayı engelle */
         }
-
         h1, h2, h3 {
-            font-family: var(--font-heading);
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-family: 'Orbitron', sans-serif;
+            color: #e6b800; /* Altın sarısı tonu */
+            margin-bottom: 20px;
         }
-
-        a { text-decoration: none; color: var(--accent-gold); transition: 0.3s; }
-        a:hover { color: var(--accent-blood); text-shadow: 0 0 10px var(--accent-blood); }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-
-        /* --- HERO SECTION (GİRİŞ) --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            /* Buraya kendi oyununun karanlık bir görselini koy */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(10,10,10,0.9)), url('hero-ruze.jpg') no-repeat center center/cover;
-            border-bottom: 3px solid var(--accent-blood);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
-        .hero h1 {
-            font-size: 5rem;
-            margin-bottom: 10px;
-            color: var(--accent-blood);
-            text-shadow: 0 0 20px rgba(138, 3, 3, 0.6);
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-        .hero p { font-size: 1.4rem; max-width: 700px; margin: 0 auto 40px; color: #ddd; font-style: italic; }
-        
-        /* --- BUTONLAR (RÜN GİBİ) --- */
+        a:hover {
+            color: #fff;
+        }
         .btn {
             display: inline-block;
-            background: linear-gradient(45deg, var(--accent-blood), #500000);
-            color: var(--accent-gold);
-            padding: 15px 40px;
-            border: 2px solid var(--accent-gold);
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(138, 3, 3, 0.4);
-            transition: 0.4s;
-            position: relative;
-            overflow: hidden;
+            background-color: #e6b800;
+            color: #1a1a1a;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
         .btn:hover {
-            background: linear-gradient(45deg, #500000, var(--accent-blood));
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
-            transform: translateY(-3px);
+            background-color: #ffd700;
+            transform: translateY(-2px);
         }
 
-        /* --- BÖLÜMLER --- */
+        /* Hero Section - En Üst Alan */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: url('hero-ruze.jpg') no-repeat center center/cover; /* Buraya oyunun en iyi görselini koy */
+            /* Alternatif olarak bir video arka planı da eklenebilir */
+            overflow: hidden;
+        }
+        .hero::before { /* Karartma efekti */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.5s ease-out;
+        }
+        .hero-content h1 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: #ffeb3b; /* Parlak sarı */
+            text-shadow: 0 0 20px rgba(255, 235, 59, 0.7);
+        }
+        .hero-content p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            color: #ccc;
+        }
+
+        /* Navigasyon (Menü) */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(13, 13, 13, 0.8);
+            padding: 20px 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        nav .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #ffeb3b;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 30px;
+        }
+        nav ul li a {
+            color: #e0e0e0;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Bölümler (About, Features, Media) */
         section {
             padding: 80px 0;
-            border-bottom: 1px solid #222;
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
+        }
+        section:nth-child(even) {
+            background-color: #121212;
+        }
+        section h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
             position: relative;
         }
-        section h2 { font-size: 3rem; text-align: center; margin-bottom: 50px; }
-        section h2::after {
-            content: '♦'; /* Başlık altı süsü */
-            display: block;
-            color: var(--accent-blood);
-            font-size: 2rem;
-            margin-top: -10px;
+        section h2::after { /* Başlık altındaki çizgi */
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: #e6b800;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -15px;
         }
 
-        /* --- KART TASARIMLARI (PARŞÖMEN/TAŞ GİBİ) --- */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .about-content img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        }
+        .about-content div {
+            flex: 1;
+        }
+        .about-content h3 {
+            font-size: 2rem;
+            color: #ffeb3b;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            text-align: left;
+        }
         .feature-card {
-            background: var(--bg-secondary);
+            background-color: #1e1e1e;
             padding: 30px;
-            border: 1px solid #333;
-            border-top: 3px solid var(--accent-blood);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: 0.3s;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            border-left: 5px solid #e6b800;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .feature-card:hover {
-            border-top-color: var(--accent-gold);
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(138, 3, 3, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
         }
-        .feature-card h3 { color: var(--accent-blood); margin-bottom: 15px; }
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: #ffeb3b;
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            color: #b0b0b0;
+        }
 
-        /* --- FOOTER --- */
-        footer {
-            background: #050505;
+        /* Media Section (Ekran Görüntüleri/Videolar) */
+        .media-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .media-item {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .media-item:hover {
+            transform: scale(1.03);
+        }
+        .media-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .media-item .video-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffeb3b;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .media-item .video-placeholder::after {
+            content: '▶';
+            margin-left: 10px;
+        }
+
+        /* Call to Action (CTA) */
+        .cta {
+            background-color: #e6b800;
+            color: #1a1a1a;
             text-align: center;
-            padding: 50px 20px;
-            border-top: 2px solid var(--accent-gold);
+            padding: 80px 20px;
+            margin-top: 60px;
         }
-        .architect {
-            font-family: var(--font-heading);
-            color: var(--accent-gold);
-            font-size: 1.2rem;
-            margin-top: 20px;
-            letter-spacing: 1px;
+        .cta h2 {
+            color: #1a1a1a;
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+        }
+        .cta p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+        .cta .btn {
+            background-color: #1a1a1a;
+            color: #e6b800;
+        }
+        .cta .btn:hover {
+            background-color: #333;
+            color: #ffd700;
         }
 
+        /* Footer */
+        footer {
+            background-color: #0d0d0d;
+            color: #777;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #222;
+        }
+        footer .social-links a {
+            font-size: 1.8rem;
+            margin: 0 15px;
+            color: #e0e0e0;
+            transition: color 0.3s ease;
+        }
+        footer .social-links a:hover {
+            color: #ffeb3b;
+        }
+        footer p {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Animasyonlar */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Duyarlı Tasarım (Mobil Uyumlu) */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3.5rem; }
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            nav .container {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 5px 15px;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .about-content img {
+                max-width: 90%;
+            }
+            .features-grid, .media-gallery {
+                grid-template-columns: 1fr;
+            }
+            section h2 {
+                font-size: 2.5rem;
+            }
+            .cta h2 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
+    <nav>
+        <div class="container">
+            <div class="logo">RÜZE</div>
+            <ul>
+                <li><a href="#about">Hakkında</a></li>
+                <li><a href="#features">Özellikler</a></li>
+                <li><a href="#media">Medya</a></li>
+                <li><a href="#buy">Hemen Oyna</a></li>
+                </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
         <div class="hero-content">
             <h1>RÜZE</h1>
-            <p>"Onların gözleri üzerindeyken, hayatta kalmanın bedeli ruhundur."</p>
-            <a href="#about" class="btn">Karanlığa Adım At</a>
+            <p>Karanlığın ve umudun çarpıştığı, kadim bir dünyanın kapıları aralanıyor. Kaderini yazmaya hazır mısın?</p>
+            <a href="#buy" class="btn">HEMEN KEŞFET</a>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2>Lanetli Ada</h2>
-            <div class="feature-card" style="border-top-color: var(--accent-gold);">
-                <h3>Rüze Çayı: Zehir ve Panzehir</h3>
-                <p>Adanın zehirli havası seni her an tüketiyor. Tek kurtuluşun, kadim Rüze bitkisinden elde edilen çay. Çiğ yersen sadece anı kurtarırsın, demlersen zinde kalırsın. Ancak sentezleyip gücüne güç katarsan, 'Onların' dikkatini çekersin. Her yudum stratejik bir kumardır.</p>
+            <h2>RÜZE Hakkında</h2>
+            <div class="about-content">
+                <img src="ruze-about-image.jpg" alt="RÜZE Oyun İçi Görüntü"> <div>
+                    <h3>Kaderini Yeniden Yaz</h3>
+                    <p>RÜZE, mistik yaratıklar, kadim büyüler ve destansı savaşlarla dolu, sürükleyici bir açık dünya RPG deneyimi sunuyor. Unutulmuş krallıkların sırlarını açığa çıkar, güçlü düşmanlarla yüzleş ve kendi efsaneni yarat.</p>
+                    <p>Her kararının yankıları olacak bu dünyada, dost mu edineceksin, yoksa düşman mı? Seçim senin.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="features">
         <div class="container">
-            <h2>Mekanikler</h2>
+            <h2>Öne Çıkan Özellikler</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Şüphe Barı (The Gaze)</h3>
-                    <p>Görünmez bir göz seni izliyor. Çok fazla güçlenirsen, bar dolar. Bar dolarsa, ada değişir; geceler senin dostun, gündüzler düşmanın olur.</p>
+                    <h3>Geniş Açık Dünya</h3>
+                    <p>Her köşesi keşfedilmeyi bekleyen devasa haritalar, gizli zindanlar ve benzersiz biyomlar.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Karanlık Bağımlılık</h3>
-                    <p>Rüze çayı içmediğin her an zayıflarsın. Bu bağımlılık seni zindanların derinliklerine, tohum aramaya itecek.</p>
+                    <h3>Derin Hikaye ve Karakterler</h3>
+                    <p>Unutulmaz karakterlerle tanış, karmaşık bir hikayenin parçası ol ve dünyayı şekillendir.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Psikolojik Savaş</h3>
-                    <p>Zombiler sadece fiziksel bir tehdit değil. Şüphe seviyen arttıkça, onların seni bir "tehdit" olarak görmemeye başladığını fark edeceksin. Neye dönüşüyorsun?</p>
+                    <h3>Dinamik Savaş Sistemi</h3>
+                    <p>Farklı silahlar, büyüler ve yeteneklerle donatılmış, aksiyon dolu ve stratejik çatışmalar.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Görsel Şölen</h3>
+                    <p>Yeni nesil grafiklerle hayat bulan detaylı çevre tasarımları ve büyüleyici atmosfer.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="media">
+        <div class="container">
+            <h2>Medya</h2>
+            <div class="media-gallery">
+                <div class="media-item">
+                    <img src="ruze-screenshot-1.jpg" alt="RÜZE Ekran Görüntüsü 1"> </div>
+                <div class="media-item">
+                    <div class="video-placeholder" onclick="window.open('https://www.youtube.com/watch?v=YOUR_TRAILER_ID', '_blank');"> Fragmanı İzle
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img src="ruze-screenshot-2.jpg" alt="RÜZE Ekran Görüntüsü 2"> </div>
+                <div class="media-item">
+                    <img src="ruze-screenshot-3.jpg" alt="RÜZE Ekran Görüntüsü 3"> </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="buy">
+        <div class="container">
+            <h2>RÜZE'ye Katıl</h2>
+            <p>Karanlık güçler yükselirken, dünyanın kaderi senin ellerinde. Maceraya şimdi başla!</p>
+            <a href="https://store.steampowered.com/app/YOUR_GAME_ID" target="_blank" class="btn">STEAM'DEN SATIN AL</a> <a href="https://discord.gg/YOUR_DISCORD_SERVER" target="_blank" class="btn" style="margin-left: 20px;">DİSCORD'A KATIL</a> </div>
+    </section>
+
     <footer>
         <div class="container">
-            <p>&copy; 2026 RÜZE. Tüm Hakları Saklıdır.</p>
-            <p class="architect">Independent Game Architect: <strong>Berat Kaan</strong></p>
+            <div class="social-links">
+                <a href="https://twitter.com/YOUR_TWITTER" target="_blank">Twitter</a> | <a href="https://facebook.com/YOUR_FACEBOOK" target="_blank">Facebook</a> | <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank">Instagram</a> </div>
+            <p>&copy; 2023 RÜZE. Tüm Hakları Saklıdır.</p>
+            <p>Oyun Yapımcısı: [Senin Adın/Şirket Adın]</p>
         </div>
     </footer>
 
