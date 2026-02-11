@@ -15,7 +15,7 @@
 Oyunun kalbinde, hayatta kalma dürtüsü ile şüphe arasında kurulan hassas denge yatar.
 
 ### 🍵 Rüze Çayı: İki Ucu Keskin Bıçak
-Adanın havası seni her 10 dakikada bir zayıflatır (-Statüler). Tek kurtuluşun Rüze bitkisidir, ancak onun da bir bedeli vardır:
+Adanın havası seni her 35 dakikada bir zayıflatır (-Statüler). Tek kurtuluşun Rüze bitkisidir, ancak onun da bir bedeli vardır:
 
 1.  **Çiğ Tüketim (Acil Durum):** Güç kaybını anlık olarak durdurur. Yan etkisi azdır.
 2.  **Demlenmiş Çay (Standart):** Zindelik sağlar. Şüphe barını hafifçe etkiler.
@@ -23,8 +23,8 @@ Adanın havası seni her 10 dakikada bir zayıflatır (-Statüler). Tek kurtulu�
 
 *Seçim senin: Zayıf ve gizli mi kalacaksın, yoksa güçlü ama av mı olacaksın?*
 
-### 👁️ Şüphe Barı (The Gaze)
-Ekranın üzerindeki görünmez göz. Yaptığın her eylem, özellikle de yüksek seviye Rüze tüketimi, bu barı doldurur.
+### 👁️ Şüphe Barı
+Yaptığın her eylem, özellikle de yüksek seviye Rüze çayı tüketimi, bu barı doldurur.
 * **Düşük Şüphe:** Ada sessizdir. Güvendesin.
 * **Yüksek Şüphe:** Geceleri görüşün keskinleşir, sabahları yorgun uyanırsın. Zombiler seni görmezden gelmeye başlar çünkü artık onlardan birine dönüşüyorsundur.
 
@@ -32,8 +32,8 @@ Ekranın üzerindeki görünmez göz. Yaptığın her eylem, özellikle de yüks
 
 ## 🛠️ Mimari ve Teknik
 Bu proje, karanlık bir vizyonun dijital tezahürüdür.
-* **Geliştirici:** Berat Kaan (Independent Game Architect)
-* **Tür:** Survival Horror / Dark Fantasy RPG
+* **Geliştirici:** Kralator (indie developer)
+* **Tür:** Survival
 * **Durum:** Geliştirme Aşamasında (Pre-Alpha)
 
 ---
