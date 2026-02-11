@@ -1,4 +1,4 @@
-# 🌑 RÜZE - The Burden of Survival
+# 🌑 RÜZE
 
 > *"Bu adada hayatta kalmak bir lütuf değil, bir lanettir. İçtiğin her yudum seni güçlendirirken, ruhundan bir parçayı 'Onlara' teslim eder."*
 
